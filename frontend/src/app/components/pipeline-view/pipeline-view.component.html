@@ -1,0 +1,9 @@
+<div class="pipeline-view">
+    <h2>🚀 Pipeline Runner</h2>
+  
+    <input [(ngModel)]="inputNumbers" placeholder="Digite números separados por vírgula" />
+    <button (click)="runPipeline()">Executar</button>
+  
+    <app-result-box *ngIf="result" [data]="result"></app-result-box>
+</div>
+  
