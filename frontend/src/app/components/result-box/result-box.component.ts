@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-result-box',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './result-box.component.html',
-  styleUrl: './result-box.component.css'
+  styleUrls: ['./result-box.component.css']
 })
 export class ResultBoxComponent {
-
+  @Input() data: any;
 }

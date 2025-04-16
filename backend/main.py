@@ -2,7 +2,16 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:4200"],  # ou ["*"] para testes
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class DataRequest(BaseModel):
     items: List[int]
@@ -35,3 +44,4 @@ def pipeline(data: DataRequest):
         "processed_items": processed,
         "final_output": final_output
     }
+

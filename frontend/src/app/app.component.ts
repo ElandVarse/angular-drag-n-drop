@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { PipelineViewComponent } from './components/pipeline-view/pipeline-view.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [PipelineViewComponent],
+  template: '<app-pipeline-view></app-pipeline-view>',
 })
-export class AppComponent {
-  title = 'frontend';
-}
+export class AppComponent {}

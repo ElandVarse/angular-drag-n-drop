@@ -1,9 +1,14 @@
-<div class="pipeline-view">
-    <h2>🚀 Pipeline Runner</h2>
+<div class="pipeline-view" style="padding: 20px; max-width: 600px; margin: auto;">
+  <h2>🚀 Pipeline Runner</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="inputNumbers"
+    placeholder="Digite números separados por vírgula (ex: 1,2,3)"
+    style="width: 100%; padding: 8px; margin-bottom: 10px;"
+  />
   
-    <input [(ngModel)]="inputNumbers" placeholder="Digite números separados por vírgula" />
-    <button (click)="runPipeline()">Executar</button>
-  
-    <app-result-box *ngIf="result" [data]="result"></app-result-box>
+  <button (click)="runPipeline()" style="padding: 10px 20px;">Executar</button>
+
+  <app-result-box *ngIf="result" [data]="result"></app-result-box>
 </div>
-  
